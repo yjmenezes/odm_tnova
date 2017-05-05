@@ -1,6 +1,6 @@
 Camera ZEISS LMK, focal 152.274mm
 PixelSize 0.023991 mm
-# image scanned and crop to 8600x8600 keeping PP on image center.
+# scanned image croped to 8600x8600 keeping PP on image center.
 --force-focal 152.274
 --force-ccd 206.332 
 #
