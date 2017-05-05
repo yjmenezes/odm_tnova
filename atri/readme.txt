@@ -2,7 +2,7 @@ Camera ZEISS LMK, focal 152.274mm
 PixelSize 0.023991 mm
 # scanned image croped to 8600x8600 keeping PP on image center.
 --force-focal 152.274
---force-ccd 206.332 
+--force-ccd 206.322 
 #
 prjc31984.txt                  camera projection center from aerotriangulation
 hvs31984.txt                   GPS measured Control points
