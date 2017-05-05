@@ -5,6 +5,8 @@ Camera ZEISS LMK, focal 152.274mm  PixelSize 0.023991 mm
 
 scanned image cropped to 8600x8600 keeping PP on image center.
 
+Cropped to 8600x8600 to fit 25MB git limitation.
+
 EXIF geotag from aerotriangulation prjc31984.txt
 
 --force-focal 152.274  --force-ccd 206.322 
