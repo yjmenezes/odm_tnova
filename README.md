@@ -1,7 +1,7 @@
 # odm_tnova
 22 Zeiss LMK 8600x8600 scanned images + exif + gcplist.txt + measurementes from DPW (contours,aerotriangulation)
 
-Camera ZEISS LMK, focal 152.274mm  PixelSize 0.023991 mm
+Camera ZEISS LMK, focal 152.274mm  PixelSize 0.023991 mm , GSD=37.1 cm
 
 scanned image cropped to 8600x8600 keeping PP on image center.
 
