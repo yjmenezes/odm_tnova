@@ -1,6 +1,8 @@
 # odm_tnova
 22 Zeiss LMK 9500x9500 scanned images without exif + gcplist.txt + measurementes from DPW (contours,aerotriangulation)
 
+3 flight strips.
+
 . to upload to git:
 
 . split -b 25M images_9500.tar.bz2
