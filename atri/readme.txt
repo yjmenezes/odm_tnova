@@ -1,13 +1,13 @@
 Camera ZEISS LMK, focal 152.274mm
 PixelSize 0.023991 mm
-# scanned image cropped to 8600x8600 keeping PP on image center.
+# scanned image cropped to 9500x9500 keeping PP on image center.
 # EXIF geotag from aerotriangulation prjc31984.txt
 --force-focal 152.274
---force-ccd 206.322 
+--force-ccd 227.915 
 #
 prjc31984.txt                  camera projection center from aerotriangulation
 hvs31984.txt                   GPS measured Control points
-gcp_list_8600x8600.txt         GCP Pixel_X Pixel_Y measured over raw image
+gcp_list_9500x9500.txt         GCP Pixel_X Pixel_Y measured over raw image
 gcp_list_2400x2400.txt         GCP over resized images
 check_31984_qgis.txt           DPW measured check points
 gcp_list_2400x2400_qgis.txt    Quantun GIS
@@ -15,5 +15,5 @@ hvphcpixel.txt                 GCP with photo
 prexml.txt
 
 julio
-2017-05-05
+2017-05-10
 cartognu.org
