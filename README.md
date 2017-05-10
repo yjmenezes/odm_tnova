@@ -25,13 +25,14 @@ julio
 
 Camera ZEISS LMK, focal 152.274mm  PixelSize 0.023991 mm , GSD=37.1 cm
 
-scanned image cropped to 8600x8600 keeping PP on image center.
+scanned image cropped to 9500x9500 keeping PP on image center of fiducial marks.
 
-Cropped to 8600x8600 to fit 25MB git limitation.
+REMOVED Cropped to 8600x8600 to fit 25MB git limitation.
 
 EXIF geotag from aerotriangulation prjc31984.txt
 
---force-focal 152.274  --force-ccd 206.322 
+for 8600x8600:    --force-focal 152.274  --force-ccd 206.322 --min-num-features 800  --orthophoto-resolution  1  -v 
+
 
 julio
 
