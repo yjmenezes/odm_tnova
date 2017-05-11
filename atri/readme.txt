@@ -4,6 +4,8 @@ PixelSize 0.023991 mm
 # EXIF geotag from aerotriangulation prjc31984.txt
 --force-focal 152.274
 --force-ccd 227.915 
+--min-num-features 800  
+--orthophoto-resolution  1  
 #
 prjc31984.txt                  camera projection center from aerotriangulation
 hvs31984.txt                   GPS measured Control points
@@ -12,6 +14,8 @@ gcp_list_2400x2400.txt         GCP over resized images
 check_31984_qgis.txt           DPW measured check points
 gcp_list_2400x2400_qgis.txt    Quantun GIS
 hvphcpixel.txt                 GCP with photo
+footprint8600_31984.wkt        photo footprint  for QGIS, using AWK script
+footprint_9500_31984.wkt
 prexml.txt
 
 julio
