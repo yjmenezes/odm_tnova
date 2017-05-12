@@ -4,7 +4,6 @@ PixelSize 0.023991 mm
 # EXIF geotag from aerotriangulation prjc31984.txt
 --force-focal 152.274
 --force-ccd 227.915 
---min-num-features 800  
 --orthophoto-resolution  1  
 #
 prjc31984.txt                  camera projection center from aerotriangulation
