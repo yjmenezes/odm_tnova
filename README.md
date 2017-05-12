@@ -17,7 +17,12 @@ to run ODM: 9500 * 0.023991 = 227.915 mm
 
 --force-focal 152.274 --force-ccd 227.915   --orthophoto-resolution  1  -v 
 
+PMVS:
+
+--force-focal 152.274  --force-ccd $1 -v --time --use-pmvs --pmvs-min-images 2 --dem  --orthophoto-resolution  1
+
 julio 
+2017-05-12
 2017-05-09
 
 //---------------------------------------------------------------------------------
