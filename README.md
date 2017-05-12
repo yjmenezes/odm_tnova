@@ -15,7 +15,7 @@ tar xpjvf /tmp/images_9500.tar.bz2 -C /tmp/
 
 to run ODM: 9500 * 0.023991 = 227.915 mm
 
---force-focal 152.274 --force-ccd 227.915 --min-num-features 800  --orthophoto-resolution  1  -v 
+--force-focal 152.274 --force-ccd 227.915   --orthophoto-resolution  1  -v 
 
 julio 
 2017-05-09
