@@ -1,0 +1,29 @@
+--- oldGeoref.cpp	2017-05-19 17:16:00.183951825 -0300
++++ newGeoref.cpp	2017-05-19 17:12:55.376285209 -0300
+@@ -777,15 +777,21 @@
+         cam.texture_file = imagesLocation_ + '/' + gcps_[gcpIndex].image_;
+ 
+         cv::Mat image = cv::imread(cam.texture_file);
+-        cam.height = static_cast<double>(image.rows);
+-        cam.width = static_cast<double>(image.cols);
+-        cam.focal_length *= static_cast<double>(cam.width)/bundleResizedTo_;
+-
++        cam.height = static_cast<double>(image.rows);       // already resized
++        cam.width = static_cast<double>(image.cols);        // already resized
++//        cam.focal_length *= static_cast<double>(cam.width)/bundleResizedTo_;
++log_<<"a)cam.focal_length "<< cam.focal_length <<" cam.width: "<<cam.width<<"\n";
++//#here--v 3.0.1----- try fix GCP pixel raw vs gcp over resized  images. cam.width==resized
++        gcps_[gcpIndex].pixelX_ *= bundleResizedTo_;
++        gcps_[gcpIndex].pixelY_ *= bundleResizedTo_;
++        gcps_[gcpIndex].pixelX_ /= 9500;      // raw image width, not resized
++        gcps_[gcpIndex].pixelY_ /= 9500;      // odm_tnova hardcoded value 9500
++//---------------------------------------------------
+         // The pixel position for the GCP in pcl-format in order to use pcl-functions
+         pcl::PointXY gcpPos;
+         gcpPos.x = static_cast<float>(gcps_[gcpIndex].pixelX_);
+         gcpPos.y = static_cast<float>(gcps_[gcpIndex].pixelY_);
+-
++log_<<"b) cam.width "<<cam.width<<" bundleResizedTo_"<<bundleResizedTo_<<" ux_: "<<gcpPos.x<<" vy_: "<<gcpPos.y<<" _pixelX_: "<<gcps_[gcpIndex].pixelX_<<" _pixelY_: "<<gcps_[gcpIndex].pixelY_<<"\n";
+         // Move vertices in mesh into the camera coordinate system
+         pcl::PointCloud<pcl::PointXYZ>::Ptr cameraCloud (new pcl::PointCloud<pcl::PointXYZ>);
+         pcl::transformPointCloud (*meshCloud, *cameraCloud, cam.pose.inverse());

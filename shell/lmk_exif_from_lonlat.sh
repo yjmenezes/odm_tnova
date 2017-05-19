@@ -12,11 +12,15 @@
 LONREF=W
 LATREF=S
 FOCAL="152.274"
+# focal35mm= 24.0522 = 152.274 * 36mm / 227.915mm
+FOC35MM=24.0522
 #IMGW=9728 
 #IMGH=9984
+# croped image keeping PP on center
+#IMGW=9500 
+#IMGH=9500
 function helpme {
     echo "run inside images/" 1>&2
-    echo "please build a { lon lat h photo } file with proj4_utm2ddeg.sh" 1>&2
     echo "#LonWGS(g.gg);LatWGS(g.gg);AltitudeWGS(m);Photo  " 1>&2
     echo "-40.043544700;-8.523805130;2785.308;01_001.jpg" 1>&2
     echo $(basename $0) "imgW imgH < cam_lonlat_wgs.txt" 1>&2
@@ -28,14 +32,18 @@ if [ $# -lt 2 ]; then
 fi
 IMGW=$1
 IMGH=$2
-echo "writing EXIF tags to *jpg" 1>&2
+echo "writing EXIF tags" 1>&2
 chmod ugo+r-x+w *jpg
+# remove minus signal 
 grep -v \# | awk -F";" '{ print $1,$2,$3,$4 }' | sed s/\-//g | \
 while read lon lat alt img; do
     if [ -f $img ]; then
         echo $lat $LATREF $lon $LONREF $alt $img $FOCAL $IMGW $IMGH 1>&2
-        exiftool -GPSLatitude=$lat -GPSLatitudeRef=$LATREF -GPSLongitude=$lon -GPSLongitudeRef=$LONREF -GPSAltitude=$alt -Make=LMK -Model=LMK -FocalLength=$FOCAL -ImageWidth=$IMGW -ImageHeight=$IMGH $img
+#        exiftool -GPSLatitude=$lat -GPSLatitudeRef=$LATREF -GPSLongitude=$lon -GPSLongitudeRef=$LONREF -GPSAltitude=$alt -Make=LMK -Model=LMK -FocalLength=$FOCAL -ImageWidth=$IMGW -ImageHeight=$IMGH $img
+        exiftool -FocalLengthIn35mmFormat=24.0522  -GPSLatitude=$lat -GPSLatitudeRef=$LATREF -GPSLongitude=$lon -GPSLongitudeRef=$LONREF -GPSAltitude=$alt -Make=LMK -Model=LMK -FocalLength=$FOCAL -ImageWidth=$IMGW -ImageHeight=$IMGH $img
     fi
 done
 rm *original;
 exit 0
+#===============================================================================
+
